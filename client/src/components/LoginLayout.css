@@ -1,0 +1,8 @@
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center; /* Center content vertically */
+    align-items: center;    /* Center content horizontally */
+    background: #353535;    /* Optional: Add a background color */
+  }

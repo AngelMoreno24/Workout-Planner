@@ -4,19 +4,13 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Login from "./pages/Login";
+import Layout from "./components/Layout";
+import LoginLayout from "./components/LoginLayout";
+import Home from "./pages/Home";
 function App() {
 
-  const [backend, setBackend] = useState([{}]);
-
-  useEffect(() => {
-    fetch("/api").then(
-      response => response.json()
-    ).then(
-      data => {
-        setBackend(data)
-      }
-    )
-  },[])
+  
   return (
     
     <div>
