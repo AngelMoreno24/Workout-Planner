@@ -1,31 +1,31 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const cors = require('cors')
-const dotenv = require("dotenv");
-const accountRoute = require("./routes/account");
+// server/index.js
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const accountRoute = require('./routes/account'); // Import your account routes
 
 dotenv.config();
 
 const app = express();
+app.use(express.json()); // Parse JSON bodies
+app.use(cors()); // Enable CORS
 
-app.use(express.json());
+app.use('/account', accountRoute); // Use the account routes for /account endpoint
 
-//Handle CORS policy: allow all oirigins with default of cors(*)
-app.use(cors());
-
-const PORT = process.env.PORT || 5000;
-
-
-app.use("/account", accountRoute)
+// Handle any other routes...
+app.get('/', (req, res) => {
+  res.send('Hello, world!');
+});
 
 mongoose
-    .connect(process.env.MONGODB_URL)
-    .then(() => {
-        console.log('App connected to database');
-        app.listen(PORT, () => {
-            console.log(`App is listening to port: ${PORT}`);
-        });
-    })
-    .catch((error) => {
-        console.log(error)
-    })
+  .connect(process.env.MONGODB_URL)
+  .then(() => {
+    console.log('Connected to database');
+  })
+  .catch((error) => {
+    console.log('Error connecting to database:', error);
+  });
+
+// Don't call app.listen() here
+module.exports = app; // Export the app instance for use in tests
