@@ -22,9 +22,9 @@ const register = async (req, res) => {
             email,
             password: encryptedPassword,
         };
-
         const account = await Account.create(newAccount);
 
+        console.log("added new account");
         // Send a success response
         return res.status(201).json(account);
     } catch (error) {
