@@ -1,13 +1,13 @@
 const express = require('express');
-const { createAccount, loginAccount } = require("../controllers/accountController.js");
+const { register } = require("../controllers/accountController.js");
 //import { verifyToken} from "../middleware/validateToken.js"
 
 const router = express.Router();
 
-router.post("/create", createAccount);
+router.post("/register", register);
 
-router.post("/login", loginAccount);
+//router.post("/login", loginAccount);
 
 
 
-export default router;
+module.exports = router; 
