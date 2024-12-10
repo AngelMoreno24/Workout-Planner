@@ -1,4 +1,4 @@
-const { register } = require('./accountController.js'); // Adjust the path
+const { register } = require('../controllers/accountController.js'); // Adjust the path
 const Account = require('../models/accountModel.js');
 const bcrypt = require('bcrypt');
 // Mock the Account model

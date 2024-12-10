@@ -13,18 +13,14 @@ app.use(cors()); // Enable CORS
 
 app.use('/account', accountRoute); // Use the account routes for /account endpoint
 
-// Handle any other routes...
-app.get('/', (req, res) => {
-  res.send('Hello, world!');
-});
 
 mongoose
   .connect(process.env.MONGODB_URL)
   .then(() => {
-    console.log('Connected to database');
+    //console.log('Connected to database');
   })
   .catch((error) => {
-    console.log('Error connecting to database:', error);
+    //console.log('Error connecting to database:', error);
   });
 
 // Don't call app.listen() here
