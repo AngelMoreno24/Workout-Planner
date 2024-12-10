@@ -1,6 +1,9 @@
 const Account = require('../models/accountModel.js');
 const bcrypt = require('bcrypt');
 
+const jwt = require('jsonwebtoken');
+
+
 // Register Function
 const register = async (req, res) => {
     try {
@@ -37,6 +40,7 @@ const register = async (req, res) => {
 // Register Function
 const login = async (req, res) => {
     try {
+
         const { email, password } = req.body;
 
         // Check if email is already registered
@@ -55,16 +59,13 @@ const login = async (req, res) => {
         );
             return res.status(200).json({ accessToken });
         }else{
-            res.status(401);
-            throw new Error("Invalid email or password");
+            return res.status(401).json({ message: "Invalid email or password" });
         }
-
-
-        return res.status(201).json(account);
     } catch (error) {
         console.error(error.message);
         res.status(500).send({ message: error.message });
     }
 };
 
-module.exports = { register };
+
+module.exports = { register, login };
