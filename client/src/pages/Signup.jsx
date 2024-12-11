@@ -36,7 +36,6 @@ const Login = () => {
 
       <h2>Login</h2>
 
-        <form onSubmit={login}>
           
           <div className='grid'>
             
@@ -48,7 +47,6 @@ const Login = () => {
 
           <button onClick={Signup}>Register</button>
 
-        </form> 
 
             
     </div>

@@ -26,7 +26,7 @@ function App() {
           <Route index element={<Login/>}></Route>
        </Route>
 
-       <Route path="/" element={<LoginLayout />}>
+       <Route path="/Signup" element={<LoginLayout />}>
           <Route index element={<Signup/>}></Route>
        </Route>
 

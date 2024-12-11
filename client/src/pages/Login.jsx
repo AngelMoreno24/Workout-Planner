@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
-import "./css/Login.css"
-
+import "./css/Login.css";
+import { Link } from 'react-router-dom';
 const Login = () => {
 
   const BASE_URL = process.env.REACT_APP_API_BASE_URL;
@@ -53,10 +53,10 @@ const Login = () => {
           </div>
 
           <button onClick={login}>Login</button>
-
-          <p style={{color: 'red'}} onClick={register}>register</p>
         </form> 
 
+
+          <Link style={{color: 'red'}} to="/Signup">Go to Signup Page</Link>
             
     </div>
   );
