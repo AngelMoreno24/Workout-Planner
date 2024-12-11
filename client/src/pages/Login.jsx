@@ -3,40 +3,47 @@ import axios from 'axios';
 import "./css/Login.css";
 import { Link } from 'react-router-dom';
 import {Signin} from '../api/login.js'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
-  const BASE_URL = process.env.REACT_APP_API_BASE_URL;
-
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const navigate = useNavigate();
   
-    const login = async (event) =>{
-      event. preventDefault()
-        try{
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-          const user = {
-            email: "angel@email.com",
-            password: "123qwe123"
-          }
+  const login = async (event) =>{
+    event. preventDefault()
+      try{
 
-
-          const response = await Signin(user);
-
-          console.log(response.data)
-        }catch(error){
-          console.log(error)
+        const user = {
+          email,
+          password
         }
 
-    };
+
+        const response = await Signin(user);
+
+        if(response.status == 200) {
+
+          localStorage.setItem("token", response.data);
+          const token = localStorage.getItem("token");
+          navigate('/Home');
+        }
+
+        console.log(response.data)
+      }catch(error){
+        console.log(error)
+      }
+
+  };
+  
+  const register = () => {
+
+    console.log("going to register page");
     
-    const register = () => {
-
-      console.log("going to register page");
-      
-    }
-
-  const asd = "asd";
+  }
+  
   return (
     <div >
 
@@ -47,12 +54,19 @@ const Login = () => {
           <div className='grid'>
             
           <p>Email:</p>
-          <input type="text" />
+          <input 
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <p>password:</p>
-          <input type="text" />
+          <input 
+            type="password" 
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}/>
           </div>
 
-          <button onClick={login}>Login</button>
+          <input type="submit" />
         </form> 
 
 
