@@ -2,13 +2,17 @@ const Workout = require('../models/workoutModel.js');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-
-
 // Register Function
 const addWorkout = async (req, res) => {
     try {
         const { category, name, sets, reps, weight, time } = req.body;
          
+
+        if(!category || !name || !sets || !reps || !weight || !time){
+
+            return res.status(401).json({ message: "required info missing" });
+        }
+
         const newWorkout = {
             category,
             name,
