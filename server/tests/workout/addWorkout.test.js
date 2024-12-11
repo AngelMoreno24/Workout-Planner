@@ -8,64 +8,64 @@ const Workout = require('../../models/workoutModel');
 jest.mock('../../models/workoutModel');
 
 describe('Integration Test - Account Registration', () => {
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
 
-  it('should create a new workout successfully', async () => {
-    
+    it('should create a new workout successfully', async () => {
+        
 
-    Workout.create.mockResolvedValue({
-        category: 'legs',
-        name: 'Back Squats',
-        sets: '5',
-        reps: '15',
-        weight: '30',
-        time: '15'
-      });
+        Workout.create.mockResolvedValue({
+            category: 'legs',
+            name: 'Back Squats',
+            sets: '5',
+            reps: '15',
+            weight: '30',
+            time: '15'
+        });
 
-    const res = await request(app)
+        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50Ijp7ImVtYWlsIjoiYW5nZWxAZW1haWwuY29tIiwiaWQiOiI2NzU3OWQzZWFkMWQwNTBlNWQ3MmFkMGUifSwiaWF0IjoxNzMzODk0NTA3fQ.YAtkuOa2bNFVuin4M-ca4R09WhjutdLe9l0cVmOoG4M'; // Replace with a valid token
+
+        const res = await request(app)
         .post('/workout/add')
-            .send({
-                category: 'legs',
-                name: 'Back Squats',
-                sets: '5',
-                reps: '15',
-                weight: '30',
-                time: '15'
-              });
+        .set('Authorization', `Bearer ${token}`) // Add the Bearer token header
+        .send({
+            category: 'legs',
+            name: 'Back Squats',
+            sets: '5',
+            reps: '15',
+            weight: '30',
+            time: '15'
+        });
 
-    // Assertions
-    expect(res.status).toBe(201);
-
-
+        // Assertions
+        expect(res.status).toBe(201);
     
-  });
+    });
 
-  it('should fail because of missing information', async () => {
-    
-    Workout.create.mockResolvedValue({
-        category: 'legs',
-        name: 'Back Squats',
-        sets: '5',
-        reps: '15',
-      });
+    it('should fail because of missing information', async () => {
+        
+        Workout.create.mockResolvedValue({
+            category: 'legs',
+            name: 'Back Squats',
+            sets: '5',
+            reps: '15',
+        });
 
 
-    const res = await request(app)
+        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50Ijp7ImVtYWlsIjoiYW5nZWxAZW1haWwuY29tIiwiaWQiOiI2NzU3OWQzZWFkMWQwNTBlNWQ3MmFkMGUifSwiaWF0IjoxNzMzODk0NTA3fQ.YAtkuOa2bNFVuin4M-ca4R09WhjutdLe9l0cVmOoG4M'; // Replace with a valid token
+
+        const res = await request(app)
         .post('/workout/add')
-            .send({
-                category: 'legs',
-                name: 'Back Squats',
-                sets: '5',
-                reps: '15',
-              });
+        .set('Authorization', `Bearer ${token}`) // Add the Bearer token header
+        .send({
+            category: 'legs',
+            name: 'Back Squats',
+            sets: '5',
+            reps: '15',
+        });
+        // Assertions
+        expect(res.status).toBe(401);
 
-    // Assertions
-    expect(res.status).toBe(401);
-
-
-    
-  });
-
+    });
 });

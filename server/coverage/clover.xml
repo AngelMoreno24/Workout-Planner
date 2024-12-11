@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1733890944672" clover="3.2.0">
-  <project timestamp="1733890944672" name="All files">
-    <metrics statements="71" coveredstatements="69" conditionals="14" coveredconditionals="14" methods="3" coveredmethods="3" elements="88" coveredelements="86" complexity="0" loc="71" ncloc="71" packages="4" files="7" classes="7"/>
+<coverage generated="1733894810154" clover="3.2.0">
+  <project timestamp="1733894810154" name="All files">
+    <metrics statements="89" coveredstatements="82" conditionals="24" coveredconditionals="21" methods="5" coveredmethods="5" elements="118" coveredelements="108" complexity="0" loc="89" ncloc="89" packages="5" files="8" classes="8"/>
     <package name="server">
       <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.js" path="C:\JavaScript\Workout-Planner\server\index.js">
@@ -62,11 +62,34 @@
         <line num="11" count="2" type="cond" truecount="8" falsecount="0"/>
         <line num="13" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
-        <line num="36" count="3" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="server.middeware">
+      <metrics statements="17" coveredstatements="12" conditionals="10" coveredconditionals="7" methods="2" coveredmethods="2"/>
+      <file name="validateToken.js" path="C:\JavaScript\Workout-Planner\server\middeware\validateToken.js">
+        <metrics statements="17" coveredstatements="12" conditionals="10" coveredconditionals="7" methods="2" coveredmethods="2"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="10" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="27" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
       </file>
     </package>
     <package name="server.models">
@@ -82,12 +105,12 @@
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
-        <line num="38" count="3" type="stmt"/>
-        <line num="40" count="3" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
       </file>
     </package>
     <package name="server.routes">
-      <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="account.js" path="C:\JavaScript\Workout-Planner\server\routes\account.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="3" type="stmt"/>
@@ -98,9 +121,10 @@
         <line num="15" count="3" type="stmt"/>
       </file>
       <file name="workout.js" path="C:\JavaScript\Workout-Planner\server\routes\workout.js">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="3" type="stmt"/>
         <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
         <line num="8" count="3" type="stmt"/>
         <line num="10" count="3" type="stmt"/>

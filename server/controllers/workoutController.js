@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 // Register Function
 const addWorkout = async (req, res) => {
     try {
-        const { category, name, sets, reps, weight, time } = req.body;
+        const { category, name, sets, reps, weight, time, id } = req.body;
          
 
         if(!category || !name || !sets || !reps || !weight || !time){
@@ -19,7 +19,8 @@ const addWorkout = async (req, res) => {
             sets,
             reps,
             weight,
-            time
+            time,
+            accountId: id
         };
 
         const workout = await Workout.create(newWorkout);

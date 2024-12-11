@@ -27,6 +27,10 @@ const workoutSchema = mongoose.Schema(
         time: {
             type: String,
             required: true
+        },
+        accountId: {
+            type: String,
+            required: true
         }
 
     },

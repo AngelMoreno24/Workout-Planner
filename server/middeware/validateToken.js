@@ -1,7 +1,7 @@
-import jwt from 'jsonwebtoken'
+const jwt = require('jsonwebtoken');
 
 
-export const verifyToken = async (request, res, next ) => {
+const verifyToken = async (request, res, next ) => {
 
     try
     {
@@ -33,3 +33,6 @@ export const verifyToken = async (request, res, next ) => {
         console.log(error);
     }
 }
+
+
+module.exports = { verifyToken };
