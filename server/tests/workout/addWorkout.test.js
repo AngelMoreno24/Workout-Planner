@@ -3,6 +3,7 @@ const app = require('../../index'); // Import the Express app
 const Account = require('../../models/accountModel'); // Mock the Account model
 const bcrypt = require('bcrypt');
 const Workout = require('../../models/workoutModel');
+const jwt = require('jsonwebtoken');
 
 // Mock Account and bcrypt
 jest.mock('../../models/workoutModel');
@@ -24,7 +25,8 @@ describe('Integration Test - Account Registration', () => {
             time: '15'
         });
 
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50Ijp7ImVtYWlsIjoiYW5nZWxAZW1haWwuY29tIiwiaWQiOiI2NzU3OWQzZWFkMWQwNTBlNWQ3MmFkMGUifSwiaWF0IjoxNzMzODk0NTA3fQ.YAtkuOa2bNFVuin4M-ca4R09WhjutdLe9l0cVmOoG4M'; // Replace with a valid token
+        const testUser = { account: { id: 'mockAccountId', email: 'test@example.com' } };
+        const token = jwt.sign(testUser, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' });
 
         const res = await request(app)
         .post('/workout/add')
@@ -53,7 +55,8 @@ describe('Integration Test - Account Registration', () => {
         });
 
 
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50Ijp7ImVtYWlsIjoiYW5nZWxAZW1haWwuY29tIiwiaWQiOiI2NzU3OWQzZWFkMWQwNTBlNWQ3MmFkMGUifSwiaWF0IjoxNzMzODk0NTA3fQ.YAtkuOa2bNFVuin4M-ca4R09WhjutdLe9l0cVmOoG4M'; // Replace with a valid token
+        const testUser = { account: { id: 'mockAccountId', email: 'test@example.com' } };
+        const token = jwt.sign(testUser, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' });
 
         const res = await request(app)
         .post('/workout/add')

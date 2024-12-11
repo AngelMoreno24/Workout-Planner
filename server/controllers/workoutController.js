@@ -2,11 +2,12 @@ const Workout = require('../models/workoutModel.js');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-// Register Function
+
 const addWorkout = async (req, res) => {
     try {
-        const { category, name, sets, reps, weight, time, id } = req.body;
+        const { category, name, sets, reps, weight, time } = req.body;
          
+        const id = req.id;
 
         if(!category || !name || !sets || !reps || !weight || !time){
 
@@ -34,4 +35,22 @@ const addWorkout = async (req, res) => {
 
 
 
-module.exports = { addWorkout };
+const getWorkout = async (req, res) => {
+    try {
+        //const { category, name, sets, reps, weight, time } = req.body;
+         
+        const id = req.id;
+
+
+        const workout = await Workout.where("accountId").equals(id);
+        
+        return res.status(201).json(workout);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send({ message: error.message });
+    }
+};
+
+
+
+module.exports = { addWorkout, getWorkout };
