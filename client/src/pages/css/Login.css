@@ -1,0 +1,19 @@
+
+.grid{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 25px 25px;
+    justify-content: center;
+    
+    padding-right: 200px;
+    p{
+        justify-self:end; 
+        margin-right: 10px;
+
+    }
+
+    input{
+        width: 200px;
+    }
+}

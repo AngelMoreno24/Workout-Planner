@@ -9,7 +9,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
   
-    const login = () =>{
+    const Signup = () =>{
         try{
 
           const user = {
@@ -18,7 +18,7 @@ const Login = () => {
           }
 
 
-          axios.post(`${BASE_URL}/account/login`, { user })
+          axios.post(`${BASE_URL}/account/register`, { user })
           .then(res => {
             console.log(res);
             console.log(res.data);
@@ -30,13 +30,7 @@ const Login = () => {
 
     };
     
-    const register = () => {
 
-      console.log("going to register page");
-      
-    }
-
-  const asd = "asd";
   return (
     <div >
 
@@ -52,9 +46,8 @@ const Login = () => {
           <input type="text" />
           </div>
 
-          <button onClick={login}>Login</button>
+          <button onClick={Signup}>Register</button>
 
-          <p style={{color: 'red'}} onClick={register}>register</p>
         </form> 
 
             
