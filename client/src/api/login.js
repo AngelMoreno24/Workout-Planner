@@ -4,15 +4,22 @@ const API = axios.create({
   baseURL: process.env.REACT_APP_API_BASE_URL,
 });
 
-export const UserSignUp = async (data) => API.post("/user/signup", data);
-export const UserSignIn = async (data) => API.post("/user/signin", data);
+export const Signin = async (info) =>
+  await API.post("/account/login", {
+    email: info.email,
+    password: info.password
+  });
+  
 
-export const login = async (token, info) =>{
+export const Signup = async (info) =>{
   
   const {firstName, lastName, email, password } = info;
 
-  API.get("/account/login", {
-    headers: { Authorization: `Bearer ${token}` },
+  API.post("/account/login", {
+    firstName,
+    lastName,
+    email,
+    password
   });
 
 }
