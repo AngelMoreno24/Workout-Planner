@@ -47,7 +47,7 @@ const Login = () => {
       
       <form onSubmit={register}>
           
-        <div className='grid'>
+        <div className='grid2'>
             
           <p>firstName:</p>
           <input 
