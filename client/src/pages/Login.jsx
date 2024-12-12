@@ -13,7 +13,11 @@ const Login = () => {
   const [password, setPassword] = useState('');
 
   useEffect(() => {
-    console.log('asd')
+    const token = localStorage.getItem('token');
+
+    if(token){
+      navigate("/dashboard")
+    }
   },[])
 
   const login = async (event) =>{

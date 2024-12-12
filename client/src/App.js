@@ -8,7 +8,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Layout from "./components/Layout";
 import LoginLayout from "./components/LoginLayout";
-import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Workouts from "./pages/Workouts";
 function App() {
 
   
@@ -18,10 +19,14 @@ function App() {
       <BrowserRouter>
       <Routes >
 
-        <Route path="/Home" element={<Layout />}>
-          <Route index element={<Home />} />
+        <Route path="/Dashboard" element={<Layout />}>
+          <Route index element={<Dashboard />} />
         </Route>
         
+       <Route path="/Workouts" element={<Layout />}>
+          <Route index element={<Workouts/>}></Route>
+       </Route>
+
         <Route path="/" element={<LoginLayout />}>
           <Route index element={<Login/>}></Route>
        </Route>
