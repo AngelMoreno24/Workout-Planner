@@ -1,52 +1,78 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
-import "./css/Login.css"
+import "./css/Signup.css"
+import {Signup} from '../api/account.js'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-
+  const navigate = useNavigate();
+  
   const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-  
-    const Signup = () =>{
-        try{
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+   
+    
+    
+  const register = async (event) =>{
+    event.preventDefault()
+      try{
 
-          const user = {
-            email: "asd",
-            password: "asdf"
-          }
-
-
-          axios.post(`${BASE_URL}/account/register`, { user })
-          .then(res => {
-            console.log(res);
-            console.log(res.data);
-          })
-
-        }catch(error){
-          console.log(error)
+        const user = {
+          firstName,
+          lastName,
+          email,
+          password
         }
 
-    };
-    
+
+        const response = await Signup(user);
+        if(response.status == 201){
+          
+          navigate('/');
+        }
+      }catch(error){
+        console.log(error)
+      }
+
+  };
 
   return (
     <div >
 
-      <h2>Login</h2>
+      <h2>Signup</h2>
 
+      
+      <form onSubmit={register}>
           
-          <div className='grid'>
+        <div className='grid'>
             
+          <p>firstName:</p>
+          <input 
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)} />
+          <p>lastName:</p>
+          <input 
+            type="text"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)} />
           <p>Email:</p>
-          <input type="text" />
+          <input 
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)} />
           <p>password:</p>
-          <input type="text" />
-          </div>
+          <input 
+            type="text"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}/>
+        </div>
 
-          <button onClick={Signup}>Register</button>
-
+        <input type="submit" />
+      </form> 
 
             
     </div>

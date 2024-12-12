@@ -11,18 +11,17 @@ export const Signin = async (info) =>
   });
   
 
-export const Signup = async (info) =>{
+export const Signup = async (info) =>
   
-  const {firstName, lastName, email, password } = info;
 
-  API.post("/account/login", {
-    firstName,
-    lastName,
-    email,
-    password
+  API.post("/account/register", {
+    firstName: info.firstName,
+    lastName: info.lastName,
+    email: info.email,
+    password: info.password
   });
 
-}
+
 
 export const getWorkouts = async (token, date) =>
   await API.get(`/workout/get${date}`, {

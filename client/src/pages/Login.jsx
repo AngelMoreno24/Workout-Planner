@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import "./css/Login.css";
 import { Link } from 'react-router-dom';
-import {Signin} from '../api/login.js'
+import {Signin} from '../api/account.js'
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -24,7 +24,7 @@ const Login = () => {
 
         const response = await Signin(user);
 
-        if(response.status == 200) {
+        if(response.status == 201) {
 
           localStorage.setItem("token", response.data);
           const token = localStorage.getItem("token");
@@ -37,12 +37,6 @@ const Login = () => {
       }
 
   };
-  
-  const register = () => {
-
-    console.log("going to register page");
-    
-  }
   
   return (
     <div >
