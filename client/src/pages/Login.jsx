@@ -12,6 +12,10 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  useEffect(() => {
+    console.log('asd')
+  },[])
+
   const login = async (event) =>{
     event. preventDefault()
       try{
@@ -24,14 +28,14 @@ const Login = () => {
 
         const response = await Signin(user);
 
-        if(response.status == 201) {
+        if(response.status == 200) {
 
           await localStorage.setItem("token", response.data);
           const token = localStorage.getItem("token");
           navigate('/Home');
         }
 
-        console.log(response.data)
+        console.log(response.status)
       }catch(error){
         console.log(error)
       }

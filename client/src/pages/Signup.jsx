@@ -13,9 +13,7 @@ const Login = () => {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-   
-    
-    
+
   const register = async (event) =>{
     event.preventDefault()
       try{
