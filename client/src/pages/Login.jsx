@@ -34,9 +34,12 @@ const Login = () => {
 
         if(response.status == 200) {
 
-          await localStorage.setItem("token", response.data);
+          const {accessToken} = response.data;
+          await localStorage.setItem("token", accessToken);
+          
           const token = localStorage.getItem("token");
-          navigate('/Home');
+          console.log(token)
+          navigate('/dashboard');
         }
 
         console.log(response.status)

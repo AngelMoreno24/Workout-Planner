@@ -1,10 +1,12 @@
 import React from 'react'
 import './Navbar.css'
 import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Logout = () => {
     const navigate = useNavigate();
-    console.log("asdasd");
+    localStorage.removeItem("accessToken");
+
 }
 
 const Navbar = () => {
