@@ -52,5 +52,40 @@ const getWorkout = async (req, res) => {
 };
 
 
+const getDateWorkout = async (req, res) => {
+    try {
+        const id = req.id; // User ID from request
+        const { date } = req.body; // Get the specified date from query parameters (format: YYYY-MM-DD)
+
+        if (!date) {
+            return res.status(400).json({ message: "Date is required." });
+        }
+
+        // Aggregate query
+        const workouts = await Workout.aggregate([
+            {
+                // Match workouts for the specified accountId and date
+                $match: {
+                    accountId: id,
+                    createdAt: {
+                        // Filter by the date range (start and end of the specified day)
+                        $gte: new Date(`${date}T00:00:00.000Z`),
+                        $lt: new Date(`${date}T23:59:59.999Z`),
+                    },
+                },
+            },
+            {
+                // Optionally, sort by creation date (newest first)
+                $sort: { createdAt: -1 },
+            },
+        ]);
+
+        return res.status(200).json(workouts);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send({ message: error.message });
+    }
+};
+
 
 module.exports = { addWorkout, getWorkout };
