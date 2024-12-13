@@ -88,4 +88,4 @@ const getDateWorkout = async (req, res) => {
 };
 
 
-module.exports = { addWorkout, getWorkout };
+module.exports = { addWorkout, getWorkout, getDateWorkout };

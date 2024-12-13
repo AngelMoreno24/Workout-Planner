@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1734128733749" clover="3.2.0">
-  <project timestamp="1734128733749" name="All files">
-    <metrics statements="98" coveredstatements="89" conditionals="24" coveredconditionals="21" methods="6" coveredmethods="6" elements="128" coveredelements="116" complexity="0" loc="98" ncloc="98" packages="5" files="8" classes="8"/>
+<coverage generated="1734131508563" clover="3.2.0">
+  <project timestamp="1734131508563" name="All files">
+    <metrics statements="109" coveredstatements="91" conditionals="26" coveredconditionals="21" methods="7" coveredmethods="6" elements="142" coveredelements="118" complexity="0" loc="109" ncloc="109" packages="5" files="8" classes="8"/>
     <package name="server">
       <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.js" path="C:\JavaScript\Workout-Planner\server\index.js">
@@ -21,7 +21,7 @@
       </file>
     </package>
     <package name="server.controllers">
-      <metrics statements="48" coveredstatements="44" conditionals="14" coveredconditionals="14" methods="4" coveredmethods="4"/>
+      <metrics statements="58" coveredstatements="45" conditionals="16" coveredconditionals="14" methods="5" coveredmethods="4"/>
       <file name="accountController.js" path="C:\JavaScript\Workout-Planner\server\controllers\accountController.js">
         <metrics statements="26" coveredstatements="26" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
         <line num="1" count="5" type="stmt"/>
@@ -52,7 +52,7 @@
         <line num="71" count="5" type="stmt"/>
       </file>
       <file name="workoutController.js" path="C:\JavaScript\Workout-Planner\server\controllers\workoutController.js">
-        <metrics statements="22" coveredstatements="18" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
+        <metrics statements="32" coveredstatements="19" conditionals="10" coveredconditionals="8" methods="3" coveredmethods="2"/>
         <line num="1" count="4" type="stmt"/>
         <line num="2" count="4" type="stmt"/>
         <line num="3" count="4" type="stmt"/>
@@ -74,7 +74,17 @@
         <line num="47" count="1" type="stmt"/>
         <line num="49" count="0" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
-        <line num="56" count="4" type="stmt"/>
+        <line num="55" count="4" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="60" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="91" count="4" type="stmt"/>
       </file>
     </package>
     <package name="server.middeware">
@@ -118,7 +128,7 @@
       </file>
     </package>
     <package name="server.routes">
-      <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="account.js" path="C:\JavaScript\Workout-Planner\server\routes\account.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="4" type="stmt"/>
@@ -129,13 +139,14 @@
         <line num="15" count="4" type="stmt"/>
       </file>
       <file name="workout.js" path="C:\JavaScript\Workout-Planner\server\routes\workout.js">
-        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="4" type="stmt"/>
         <line num="2" count="4" type="stmt"/>
         <line num="3" count="4" type="stmt"/>
         <line num="6" count="4" type="stmt"/>
         <line num="8" count="4" type="stmt"/>
         <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
         <line num="12" count="4" type="stmt"/>
       </file>
     </package>
