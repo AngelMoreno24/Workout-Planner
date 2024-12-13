@@ -31,10 +31,10 @@ export const getWorkouts = async (token, date) =>
 export const addWorkout = async (token, data) =>
   await API.post(`/workout/add`, data, {
     headers: { Authorization: `Bearer ${token}` },
-    category: info.category,
-    name: info.name,
-    sets: info.sets,
-    reps: info.reps,
-    weight: info.weight,
-    time: info.time
+    category: data.category,
+    name: data.name,
+    sets: data.sets,
+    reps: data.reps,
+    weight: data.weight,
+    time: data.time
   });

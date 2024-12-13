@@ -1,8 +1,25 @@
 import React, { useEffect } from 'react'
 import "./css/Dashboard.css"
+import { addWorkout } from '../api/workout'
 
 const Home = () => {
   
+
+
+
+
+
+  const addWorkout = () => {
+
+    try{
+
+    }catch(error){
+      console.log(error);
+    }
+
+  }
+
+
   return (
 
     <div className='center'>
