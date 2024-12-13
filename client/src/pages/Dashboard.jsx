@@ -9,76 +9,62 @@ const Home = () => {
       <div className='grid-layout'>
         
         <div className='card'>
+
+          <h2>Add new Workout</h2>
           <div className='grid-addWorkout'>
             
-            <p>category</p>
-            <input type="text" />
-            <p>name</p>
-            <input type="text" />
-            <p>sets</p>
-            <input type="text" />
-            <p>reps</p>
-            <input type="text" />
-            <p>weight</p>
-            <input type="text" />
-            <p>time</p>
-            <input type="text" />
+            <input type="text" placeholder="category"/>
+            <input type="text" placeholder="name"/>
+            <input type="text" placeholder="sets"/>
+            <input type="text" placeholder="reps"/>
+            <input type="text" placeholder="weight"/>
+            <input type="text" placeholder="time"/>
           </div>
+          <input type="submit" value={'Add'}/>
         </div>
 
         
         <div className='card'>
-          <div className='grid-addWorkout'>
-            
-            <p>category</p>
-            <input type="text" />
-            <p>name</p>
-            <input type="text" />
-            <p>sets</p>
-            <input type="text" />
-            <p>reps</p>
-            <input type="text" />
-            <p>weight</p>
-            <input type="text" />
-            <p>time</p>
-            <input type="text" />
-          </div>
-        </div>
-        
-        <div className='card'>
-          <div className='grid-addWorkout'>
-            
-            <p>category</p>
-            <input type="text" />
-            <p>name</p>
-            <input type="text" />
-            <p>sets</p>
-            <input type="text" />
-            <p>reps</p>
-            <input type="text" />
-            <p>weight</p>
-            <input type="text" />
-            <p>time</p>
-            <input type="text" />
-          </div>
-        </div>
 
-        <div className='card'>
+          <h2>Add new Workout</h2>
           <div className='grid-addWorkout'>
             
-            <p>category</p>
-            <input type="text" />
-            <p>name</p>
-            <input type="text" />
-            <p>sets</p>
-            <input type="text" />
-            <p>reps</p>
-            <input type="text" />
-            <p>weight</p>
-            <input type="text" />
-            <p>time</p>
-            <input type="text" />
+            <input type="text" placeholder="category"/>
+            <input type="text" placeholder="name"/>
+            <input type="text" placeholder="sets"/>
+            <input type="text" placeholder="reps"/>
+            <input type="text" placeholder="weight"/>
+            <input type="text" placeholder="time"/>
           </div>
+          <input type="submit" value={'Add'}/>
+        </div>
+        <div className='card'>
+
+          <h2>Add new Workout</h2>
+          <div className='grid-addWorkout'>
+            
+            <input type="text" placeholder="category"/>
+            <input type="text" placeholder="name"/>
+            <input type="text" placeholder="sets"/>
+            <input type="text" placeholder="reps"/>
+            <input type="text" placeholder="weight"/>
+            <input type="text" placeholder="time"/>
+          </div>
+          <input type="submit" value={'Add'}/>
+        </div>
+        <div className='card'>
+
+          <h2>Add new Workout</h2>
+          <div className='grid-addWorkout'>
+            
+            <input type="text" placeholder="category"/>
+            <input type="text" placeholder="name"/>
+            <input type="text" placeholder="sets"/>
+            <input type="text" placeholder="reps"/>
+            <input type="text" placeholder="weight"/>
+            <input type="text" placeholder="time"/>
+          </div>
+          <input type="submit" value={'Add'}/>
         </div>
 
       </div>
