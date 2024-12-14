@@ -29,18 +29,31 @@ export const getWorkouts = async (token, date) =>
   });
 
 export const addWorkout = async (token, data) => {
-return await API.post(
-    `/workout/add`, 
-    {
-    category: data.category,
-    name: data.name,
-    sets: data.sets,
-    reps: data.reps,
-    weight: data.weight,
-    time: data.time,
-    },
-    {
-    headers: { Authorization: `Bearer ${token}` },
-    }
+  return await API.post(
+      `/workout/add`, 
+      {
+      category: data.category,
+      name: data.name,
+      sets: data.sets,
+      reps: data.reps,
+      weight: data.weight,
+      time: data.time,
+      },
+      {
+      headers: { Authorization: `Bearer ${token}` },
+      }
+);
+};
+
+
+export const getWorkoutsByDate = async (token, data) => {
+  return await API.post(
+      `/workout/getDate`, 
+      {
+        date: data.date,
+      },
+      {
+      headers: { Authorization: `Bearer ${token}` },
+      }
 );
 };

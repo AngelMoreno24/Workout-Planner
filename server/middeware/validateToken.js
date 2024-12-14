@@ -30,7 +30,7 @@ const verifyToken = async (request, res, next ) => {
         }
     }
     }catch(error){
-        console.log(error);
+        console.log('error in validation');
     }
 }
 
