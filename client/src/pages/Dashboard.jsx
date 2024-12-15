@@ -48,34 +48,67 @@ const Home = () => {
       console.error(error);
     }
   };
+
+  useEffect(() => {
+    setPieData();
+    createWorkoutCards();
+  }, [workouts]);
+
+
+
+  const setPieData = ()=>{
   
-    useEffect(() => {
-      setPieData();
-    }, [workouts]);
-  
+    console.log('workouts')
+    console.log(workouts)
+    let categoryCount = {}; // This will track the counts of each category
+    workouts.map((workout)=>{
 
-    const setPieData = ()=>{
-    
-      console.log('workouts')
-      console.log(workouts)
-      let categoryCount = {}; // This will track the counts of each category
-      workouts.map((workout)=>{
+      const count = (categoryCount[workout.category] || 0) + 1;
+      categoryCount[workout.category] = count;
+    })
 
-        const count = (categoryCount[workout.category] || 0) + 1;
-        categoryCount[workout.category] = count;
-      })
-
-      console.log('categoryCount')
-        console.log(categoryCount)
-      // Convert to the desired format
-      const dataa = [["Workouts", "Workouts today"]];
-      for (const [category, count] of Object.entries(categoryCount)) {
-        dataa.push([category, count]);
-      }
-      setData(dataa)
-      console.log('dataa')
-        console.log(dataa)
+    console.log('categoryCount')
+      console.log(categoryCount)
+    // Convert to the desired format
+    const dataa = [["Workouts", "Workouts today"]];
+    for (const [category, count] of Object.entries(categoryCount)) {
+      dataa.push([category, count]);
     }
+    setData(dataa)
+    console.log('dataa')
+      console.log(dataa)
+  }
+
+
+  // Function to create workout cards
+  const createWorkoutCards = () => {
+    const cards = workouts.map((exercise) => (
+      <div
+        key={exercise._id}
+        className="card"
+      >
+        <h2>{exercise.name}</h2>
+        <p>
+          <strong>Category:</strong> {exercise.category}
+        </p>
+        <p>
+          <strong>Sets/Reps:</strong> {`${exercise.sets} x ${exercise.reps}`}
+        </p>
+        <p>
+          <strong>Weight:</strong> {exercise.weight} kg
+        </p>
+        <p>
+          <strong>Time:</strong> {exercise.time} mins
+        </p>
+      </div>
+    ));
+    setWorkoutCards(cards);
+  };
+
+
+
+
+
 
   const add = async () => {
 
@@ -179,8 +212,11 @@ const Home = () => {
         </div>
 
         
+        {workoutCards}
 
       </div>
+
+      
     </div>
   )
 }
