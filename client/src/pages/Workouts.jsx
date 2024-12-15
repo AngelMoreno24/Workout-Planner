@@ -26,10 +26,7 @@ const Workouts = () => {
           <strong>Category:</strong> {exercise.category}
         </p>
         <p>
-          <strong>Sets:</strong> {exercise.sets}
-        </p>
-        <p>
-          <strong>Reps:</strong> {exercise.reps}
+          <strong>Sets/Reps:</strong> {`${exercise.sets} x ${exercise.reps}`}
         </p>
         <p>
           <strong>Weight:</strong> {exercise.weight} kg
