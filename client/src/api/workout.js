@@ -1,36 +1,16 @@
 import axios from "axios";
 
-const API = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL,
-});
 
-export const Signin = async (info) =>
-  await API.post("/account/login", {
-    email: info.email,
-    password: info.password
-  });
-  
-
-export const Signup = async (info) =>
-  
-
-  API.post("/account/register", {
-    firstName: info.firstName,
-    lastName: info.lastName,
-    email: info.email,
-    password: info.password
-  });
-
-
-
+const URL =  process.env.REACT_APP_API_BASE_URL;
+ 
 export const getWorkouts = async (token, date) =>
-  await API.get(`/workout/get${date}`, {
+  await axios.get(`${URL}/workout/get${date}`, {
     headers: { Authorization: `Bearer ${token}` },
   });
 
 export const addWorkout = async (token, data) => {
-  return await API.post(
-      `/workout/add`, 
+  return await axios.post(
+      `${URL}/workout/add`, 
       {
       category: data.category,
       name: data.name,
@@ -47,8 +27,8 @@ export const addWorkout = async (token, data) => {
 
 
 export const getWorkoutsByDate = async (token, data) => {
-  return await API.post(
-      `/workout/getDate`, 
+  return await axios.post(
+      `${URL}/workout/getDate`, 
       {
         date: data.date,
       },
